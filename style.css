@@ -1,0 +1,24 @@
+body {
+    background-color: aliceblue;
+}
+
+.categories,
+.answers,
+.info { width: fit-content; }
+
+.container {
+    padding: 40px;
+}
+
+.info {
+    margin-top: 20px;
+    display: grid;
+    gap: 3rem;
+
+    padding: 10px;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.categories { grid-column: 1; }
+.answers { grid-column: 2; }
