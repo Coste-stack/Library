@@ -85,7 +85,7 @@ newBookButton.addEventListener('click', () => {
         displayForm.querySelector('.answer.author').textContent = newForm.querySelector('.author.answer').value;
         displayForm.querySelector('.answer.title').textContent = newForm.querySelector('.title.answer').value;
         displayForm.querySelector('.answer.pages').textContent = newForm.querySelector('.pages.answer').value;
-        displayForm.querySelector('.answer.read').checked = newForm.querySelector('.read.answer').checked ? 'Yes' : 'No';
+        displayForm.querySelector('.answer.read').checked = newForm.querySelector('.read.answer').checked ? true : false;
 
         formsContainer.appendChild(displayForm);
         overlayContainer.remove();
