@@ -40,9 +40,9 @@ form { margin: 0px 40px 40px 40px; }
     transform: translate(-50%, -50%);
 }
 
-form .categories p, form .answers input { margin: 0.2rem;}
+form p.category, form input.answer { margin: 0.2rem;}
 
-form .answers input {
+form input.answer {
     margin: 0.2rem;
     background-color: #e5ebf5;
     border-style: solid;

@@ -16,22 +16,25 @@ newBookButton.addEventListener('click', () => {
         // add attributes based on the class of the original element
         switch (newFormAnswers.item(i).classList[0]) {
             case 'author':
-                newElement.classList.add('author');
+                newElement.classList.add('author', 'answer');
                 newElement.setAttribute('type', 'text');
                 newElement.setAttribute('name', 'author');
                 newElement.required = true;
                 break;
             case 'title':
+                newElement.classList.add('title', 'answer');
                 newElement.setAttribute('type', 'text');
                 newElement.setAttribute('name', 'title');
                 newElement.required = true;
                 break;
             case 'pages':
+                newElement.classList.add('pages', 'answer');
                 newElement.setAttribute('type', 'number');
                 newElement.setAttribute('name', 'pages');
                 newElement.required = true;
                 break;
             case 'read':
+                newElement.classList.add('read', 'answer');
                 newElement.setAttribute('type', 'checkbox');
                 newElement.setAttribute('name', 'read');
                 break;
@@ -56,18 +59,16 @@ newBookButton.addEventListener('click', () => {
     document.getElementsByTagName('body')[0].appendChild(form);
 
     // when submiting - add the values to a card and close the form
-    form.addEventListener("submit", () => {
+    form.addEventListener("submit", (event) => {
         event.preventDefault();
         const displayForm = originalForm.cloneNode(true);
-        const displayFormAnswers = displayForm.querySelector('.answers');
+
+        displayForm.querySelector('.answer.author').textContent = newForm.querySelector('.author.answer').value;
+        displayForm.querySelector('.answer.title').textContent = newForm.querySelector('.title.answer').value;
+        displayForm.querySelector('.answer.pages').textContent = newForm.querySelector('.pages.answer').value;
+        displayForm.querySelector('.answer.read').textContent = newForm.querySelector('.read.answer').checked ? 'Yes' : 'No';
 
         formsContainer.appendChild(displayForm);
-
-        displayFormAnswers.querySelector('.author').textContent = author.value;
-        displayFormAnswers.querySelector('.title').textContent = title.value;
-        displayFormAnswers.querySelector('.pages').textContent = pages.value;
-        displayFormAnswers.querySelector('.read').textContent = read.checked ? 'Yes' : 'No';
-
         form.remove();
     });
 });
