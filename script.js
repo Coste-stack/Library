@@ -55,7 +55,16 @@ newBookButton.addEventListener('click', () => {
     let submit = document.createElement('input');
     submit.setAttribute('type', 'submit');
     submit.setAttribute('name', 'submit');
+    submit.setAttribute('value', 'Submit');
     newForm.append(submit);
+
+    // add a button (for closing form)
+    let close = document.createElement('button');
+    close.classList.add('close');
+    // add a blank div to fit into the second column of grid
+    let blank = document.createElement('div');
+    newForm.insertBefore(blank, newForm.firstChild);
+    newForm.insertBefore(close, newForm.firstChild);
 
     document.getElementsByTagName('body')[0].appendChild(form);
 
@@ -72,4 +81,6 @@ newBookButton.addEventListener('click', () => {
         formsContainer.appendChild(displayForm);
         form.remove();
     });
+
+    close.addEventListener("click", () => { form.remove(); });
 });
