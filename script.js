@@ -5,6 +5,13 @@ const originalForm = document.querySelector('.form');
 
 const categories = ["Author", "Title", "Number of pages", "Has it been read"];
 newBookButton.addEventListener('click', () => {
+    // don't allow forms to stack, delete all of them
+    if (document.querySelectorAll('.absolute').length > 0) {
+        document.querySelectorAll('.absolute').forEach(el => {
+          el.remove();
+        })
+    }
+
     const newForm = originalForm.cloneNode(true);
     const newFormAnswers = newForm.querySelector('.answers');
 
@@ -67,4 +74,3 @@ newBookButton.addEventListener('click', () => {
         form.remove();
     });
 });
-
