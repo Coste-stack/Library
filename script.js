@@ -16,7 +16,7 @@ newBookButton.addEventListener('click', () => {
     // create a form element
     let form = document.createElement('form');
     form.setAttribute('method', 'post');
-    //form.classList.add('answers');
+    form.classList.add('absolute');
     
     form.appendChild(newForm);
 
