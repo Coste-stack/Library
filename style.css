@@ -1,14 +1,56 @@
 body {
-    background-color: #f0f8ff;
+    background-color: #9EC8B9;
 }
+
+.new-book {
+    background-color: #1B4242;
+    color: #bbbbbb;
+    box-shadow: 3px 3px 5px 0px #1b4b31;
+    border-color: #838383;
+    border-style: solid;
+
+    margin: 40px;
+    padding: 5px;
+}
+.new-book:hover { padding: 7px; margin: 38px; }
+.new-book:active { padding: 6px; margin: 39px; }
+
+.form {
+    background-color: #1B4242;
+    color: #bbbbbb;
+    box-shadow: 3px 3px 5px 0px #1b4b31;
+    border-color: #677779;
+
+    margin: 0px 40px 40px 40px;
+}
+
+form input.answer {
+    background-color: #869490;
+    border-style: solid;
+    border-color: black;
+}
+
+input[type=checkbox] {
+    width: 20px; height: 20px;
+} 
+
+input[type='checkbox']:after{
+    content: '';
+    display: inline-block;
+    border: 1px solid #c0c0c0;
+    border-radius: 0.25em;
+    background: #e0e0e0;
+}
+
+input[type='checkbox']:checked:after {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #00ff00;
+} 
 
 .categories,
 .answers,
 .form { width: fit-content; }
-
-.new-book { margin: 40px; }
-.forms-container,
-form { margin: 0px 40px 40px 40px; }
 
 .form {
     display: grid;
@@ -41,10 +83,6 @@ form { margin: 0px 40px 40px 40px; }
 }
 
 form p.category, form input.answer { margin: 0.2rem;}
+form input.answer { margin: 0.2rem; }
 
-form input.answer {
-    margin: 0.2rem;
-    background-color: #e5ebf5;
-    border-style: solid;
-    border-color: black;
-}
+
