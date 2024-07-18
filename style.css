@@ -1,17 +1,17 @@
 body {
     background-color: aliceblue;
+    padding: 40px;
 }
 
 .categories,
 .answers,
-.info { width: fit-content; }
+.form { width: fit-content; }
 
-.container {
-    padding: 40px;
+.new-book {
+    margin-bottom: 20px;
 }
 
-.info {
-    margin-top: 20px;
+.form {
     display: grid;
     gap: 3rem;
 
