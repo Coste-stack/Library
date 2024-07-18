@@ -18,7 +18,15 @@ body {
     padding: 10px;
     border-style: solid;
     border-radius: 5px;
+
+    min-width: 220px;
 }
 
 .categories { grid-column: 1; }
 .answers { grid-column: 2; }
+
+.forms-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
