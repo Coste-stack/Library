@@ -13,20 +13,28 @@ body {
 
 .form {
     display: grid;
-    gap: 3rem;
-
+    gap: 2rem;
+    align-items: center;
+    
     padding: 10px;
     border-style: solid;
     border-radius: 5px;
 
-    min-width: 220px;
+    width: fit-content;
 }
 
-.categories { grid-column: 1; }
+.answers, .categories {
+    display: grid;
+}
+
+.categories { grid-column: 1; min-width: max-content;}
 .answers { grid-column: 2; }
 
 .forms-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, 400px); */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
 }
