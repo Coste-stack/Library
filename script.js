@@ -66,7 +66,13 @@ newBookButton.addEventListener('click', () => {
     newForm.insertBefore(blank, newForm.firstChild);
     newForm.insertBefore(close, newForm.firstChild);
 
+    // add the form to the body
     document.getElementsByTagName('body')[0].appendChild(form);
+    // wrap the form with a container
+    let formParent = document.createElement('div');
+    formParent.classList.add('form-shader');
+    form.parentNode.replaceChild(formParent, form);
+    formParent.appendChild(form);
 
     // when submiting - add the values to a card and close the form
     form.addEventListener("submit", (event) => {
@@ -79,8 +85,10 @@ newBookButton.addEventListener('click', () => {
         displayForm.querySelector('.answer.read').checked = newForm.querySelector('.read.answer').checked ? 'Yes' : 'No';
 
         formsContainer.appendChild(displayForm);
-        form.remove();
+        formParent.remove();
     });
 
-    close.addEventListener("click", () => { form.remove(); });
+    // when close button or box around form is clicked, remove the form
+    close.addEventListener("click", () => { formParent.remove(); });
+    formParent.addEventListener("click", () => { formParent.remove(); });
 });
