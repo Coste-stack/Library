@@ -59,6 +59,7 @@ newBookButton.addEventListener('click', () => {
 
     document.getElementsByTagName('body')[0].appendChild(form);
 
+    // when submiting - add the values to a card and close the form
     form.addEventListener("submit", () => {
         event.preventDefault();
         const displayForm = originalForm.cloneNode(true);
